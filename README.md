@@ -69,9 +69,9 @@ Transfer the aggregate file to your computer and replace the sample names with t
 This will generate the SC2 estimated abundances plots. 
 
 # Sample Statistics and SC2 Variant Profiles in R
--You will need the cov files, depth files and all_filtered.tsv files. You will also need the covid.txt, voc_omicron.txt and a description file (this is similar to the samplesheet).
--The covid.txt, description file, voc_omicron.txt and all_filtered.tsv are required for the voc_annotation.rmd script. This will generate the SC2 variant profile. Remember to open the all_filtered.tsv file in excel and save it prior to running the script.
--The description file, covid.txt, depth folder and cov folder are needed for the sentinel_reports.rmd script. This will geneate the sample statistics.
+- You will need the cov files, depth files and all_filtered.tsv files. You will also need the covid.txt, voc_omicron.txt and a description file (this is similar to the samplesheet).
+- The covid.txt, description file, voc_omicron.txt and all_filtered.tsv are required for the voc_annotation.rmd script. This will generate the SC2 variant profile. Remember to open the all_filtered.tsv file in excel and save it prior to running the script.
+- The description file, covid.txt, depth folder and cov folder are needed for the sentinel_reports.rmd script. This will geneate the sample statistics.
 
 
 
