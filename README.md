@@ -12,7 +12,7 @@ Instructions on analysis of amplicon-based sequencing using paragon genomic kit 
 - BaseSpace Sequence Hub CLI tool 
 - bcl2fastq 2.19.0.316 or above
 
-# Demultiplexing sequencing data
+# Demultiplexing Sequence Data
 The genomics center will share the run with you via your basespace account, which you must accept (run & project). Download the finished sequencing run using Basespace CLI. We usually download and demultiplex the data on scratch, then moved the fastq's to our personal folder for analysis.
 ```
 bs list runs
@@ -48,7 +48,7 @@ Move the folder containing the fastqs to your directory for analysis. Make sure 
 This script will trim/filter the fastqs, map them to the SC2 genome, mask primers, call variants, determine coverage and depth.
 You will need to transfer the cov folder, depth folder and all_filtered.tsv file to computer that has R.
 
-# Estimating SC2 variant abundances using Freyja
+# Estimating SC2 Variant Abundances using Freyja
 You need to move your bam files from your filtered_bam folder to a new folder. I usually make a folder called bam and move the bam files there. Next you need to move the frejya scripts and barcode file to the bam folder.
 ```
 ./frey1.sh
@@ -68,6 +68,6 @@ Transfer the aggregate file to your computer and replace the sample names with t
 ```
 This will generate the SC2 estimated abundances plots. 
 
-# Sample statistics and SC2 variant profiles in R
+# Sample Statistics and SC2 Variant Profiles in R
 
 
