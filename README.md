@@ -49,8 +49,24 @@ This script will trim/filter the fastqs, map them to the SC2 genome, mask primer
 You will need to transfer the cov folder, depth folder and all_filtered.tsv file to computer that has R.
 
 # Estimating SC2 variant abundances using Freyja
-
-
+You need to move your bam files from your filtered_bam folder to a new folder. I usually make a folder called bam and move the bam files there. Next you need to move the frejya scripts and barcode file to the bam folder.
+```
+./frey1.sh
+```
+You need to update the barcode file periodically, so you need to change the frey2.sh script at the "--barcode {jan-bc.csv}" part and give it the new barcode file.
+```
+./frey2.sh
+```
+Make a new folder called demix and move all the demix files to the demix folder.
+```
+freyja aggregate --output {samplerunname.tsv} ./
+```
+This will create the frejya file that you will need to further process to generate the plots.
+Transfer the aggregate file to your computer and replace the sample names with the description names. Save the file or files. The aggregate file has all the samples results, so we can split the results based on site and create a site specific file. Transfer the new file/s back to the server to the demix folder.
+```
+./frey3.sh
+```
+This will generate the SC2 estimated abundances plots. 
 
 # Sample statistics and SC2 variant profiles in R
 
