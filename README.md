@@ -43,28 +43,16 @@ Move the folder containing the fastqs to your directory for analysis. Make sure 
 
 # Processing Raw Sequencing Data
 ```
-./sentinal.sh {monthyear_runletter_folder} {output_directory_name} {SC2 bwa indices} {primer_tab_file}
+./sentinal.sh {monthyear_runletter_folder} {output_directory_name} {SC2 bwa indices} {primer_tab_file} {freyja_barcode}
 ```
-This script will trim/filter the fastqs, map them to the SC2 genome, mask primers, call variants, determine coverage and depth.
-You will need to transfer the cov folder, depth folder and all_filtered.tsv file to computer that has R.
+This script will trim/filter the fastqs, map them to the SC2 genome, mask primers, call and estimate variant abundances, determine coverage and depth.
+You will need to transfer the cov folder, depth folder, freyja aggregate tsv and all_filtered.tsv file to computer that has R.
 
-# Estimating SC2 Variant Abundances using Freyja
-You need to move your bam files from your filtered_bam folder to a new folder. I usually make a folder called bam and move the bam files there. Next you need to move the frejya scripts and barcode file to the bam folder.
+# Generating Freyja SC2 Variant Abundances Plots
+
+Transfer the aggregate tsv file to your computer and replace the sample names with the description names. Save the file or files. The aggregate file has all the samples results, so we can split the results based on site and create a site specific file. Transfer the new file/s back to the server to the demix folder.
 ```
-./frey1.sh
-```
-You need to update the barcode file periodically, so you need to change the frey2.sh script at the "--barcode {jan-bc.csv}" part and give it the new barcode file.
-```
-./frey2.sh
-```
-Make a new folder called demix and move all the demix files to the demix folder.
-```
-freyja aggregate --output {samplerunname.tsv} ./
-```
-This will create the frejya file that you will need to further process to generate the plots.
-Transfer the aggregate file to your computer and replace the sample names with the description names. Save the file or files. The aggregate file has all the samples results, so we can split the results based on site and create a site specific file. Transfer the new file/s back to the server to the demix folder.
-```
-./frey3.sh
+./freyplot.sh
 ```
 This will generate the SC2 estimated abundances plots. 
 
