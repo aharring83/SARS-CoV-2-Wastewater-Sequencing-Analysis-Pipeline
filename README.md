@@ -42,9 +42,9 @@ mv *.fastq.gz {monthyear_runletter_folder}
 Move the folder containing the fastqs to your directory for analysis. Make sure you have the SC2 reference fasta, the bwa indices of the SC2 reference, primer_tab file, which is used to mask primers sequences.
 
 # Processing Raw Sequencing Data
-I have created a conda environment on the virtual machine server called "sentinel" with all the packages installed.
+I installed the packages in the base conda env for the computation group.
 ```
-conda activate sentinel
+source ~opt/miniconda/bin/activate
 ```
 ```
 ./sentinal.sh {monthyear_runletter_folder} {output_directory_name} {SC2 bwa indices} {primer_tab_file} {freyja_barcode}
