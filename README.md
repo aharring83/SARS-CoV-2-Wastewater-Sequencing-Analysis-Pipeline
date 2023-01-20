@@ -44,7 +44,7 @@ Move the folder containing the fastqs to your directory for analysis. Make sure 
 # Processing Raw Sequencing Data
 I installed the packages in the base conda env for the computation group.
 ```
-source ~opt/miniconda/bin/activate
+source ~/../opt/miniconda/bin/activate
 ```
 ```
 ./sentinal.sh {monthyear_runletter_folder} {output_directory_name} {SC2 bwa indices} {primer_tab_file} {freyja_barcode}
