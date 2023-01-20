@@ -1,5 +1,5 @@
 # SARS-CoV-2-Wastewater-sequencing-Analysis-Pipeline
-Instructions on analysis of amplicon-based sequencing using paragon genomic kit on a nextseq550 
+Analysis of amplicon-based SC2 sequencing using Paragons kit on a Nextseq550 
 
 ------------
 # Packages required:
@@ -39,9 +39,13 @@ Depending on the number of samples, you can either move all the fastqs into one 
 ```
 mv *.fastq.gz {monthyear_runletter_folder} 
 ```
-Move the folder containing the fastqs to your directory for analysis. Make sure you have the SC2 reference fasta, the bwa indices of the SC2 reference, primer_tab file, which is used to mask primers sequences used to generate the amplicon-based genomes.
+Move the folder containing the fastqs to your directory for analysis. Make sure you have the SC2 reference fasta, the bwa indices of the SC2 reference, primer_tab file, which is used to mask primers sequences.
 
 # Processing Raw Sequencing Data
+I have created a conda environment on the virtual machine server called "sentinel" with all the packages installed.
+```
+conda activate sentinel
+```
 ```
 ./sentinal.sh {monthyear_runletter_folder} {output_directory_name} {SC2 bwa indices} {primer_tab_file} {freyja_barcode}
 ```
@@ -60,6 +64,7 @@ This will generate the SC2 estimated abundances plots.
 - You will need the cov files, depth files and all_filtered.tsv files. You will also need the covid.txt, voc_omicron.txt and a description file (this is similar to the samplesheet).
 - The covid.txt, description file, voc_omicron.txt and all_filtered.tsv are required for the voc_annotation.rmd script. This will generate the SC2 variant profile. Remember to open the all_filtered.tsv file in excel and save it prior to running the script.
 - The description file, covid.txt, depth folder and cov folder are needed for the sentinel_reports.rmd script. This will geneate the sample statistics.
+The R markdown scripts and necessary files are in the folder called Rscripts.
 
 
 
