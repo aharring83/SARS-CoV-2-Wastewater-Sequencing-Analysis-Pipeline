@@ -42,12 +42,12 @@ mv *.fastq.gz {monthyear_runletter_folder}
 Move the folder containing the fastqs to your directory for analysis. Make sure you have the SC2 reference fasta, the bwa indices of the SC2 reference, primer_tab file, which is used to mask primers sequences.
 
 # Processing Raw Sequencing Data
-I installed the packages in the base conda env for the computation group.
+I installed the packages in the base conda env for the computation group. You will need to install BaseSpace Sequence Hub CLI tool under your user account. 
 ```
 source ~/../opt/miniconda/bin/activate
 ```
 ```
-./sentinal.sh {monthyear_runletter_folder} {output_directory_name} {SC2 bwa indices} {primer_tab_file} {freyja_barcode}
+./sentinal.sh {monthyear_runletter_folder} {output_directory_name} {SC2 bwa indices} {primer_tab_file} {FULL_PATH_TO_freyja_barcode.csv}
 ```
 This script will trim/filter the fastqs, map them to the SC2 genome, mask primers, call and estimate variant abundances, determine coverage and depth.
 You will need to transfer the cov folder, depth folder, freyja aggregate tsv and all_filtered.tsv file to computer that has R.
