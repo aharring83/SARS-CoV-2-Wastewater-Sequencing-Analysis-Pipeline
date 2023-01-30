@@ -50,13 +50,13 @@ source ~/../opt/miniconda/bin/activate
 ./sentinal.sh {monthyear_runletter_folder} {output_directory_name} {SC2 bwa indices} {primer_tab_file} {FULL_PATH_TO_freyja_barcode.csv}
 ```
 This script will trim/filter the fastqs, map them to the SC2 genome, mask primers, call and estimate variant abundances, determine coverage and depth.
-You will need to transfer the cov folder, depth folder, freyja aggregate tsv and all_filtered.tsv file to computer that has R.
+You will need to transfer the cov folder, depth folder, freyja aggregate file (output_directory/filtered_bam/bam/demix/freyjaresults.tsv) and all_filtered.tsv (output_directory folder) file to computer that has R.
 
 # Generating Freyja SC2 Variant Abundances Plots
 
-Transfer the aggregate tsv file to your computer and replace the sample names with the description names. Save the file or files. The aggregate file has all the samples results, so we can split the results based on site and create a site specific file. Transfer the new file/s back to the server to the demix folder.
+Transfer the aggregate tsv file to your computer and replace the sample names with the description names. Save the file or files. The aggregate file has all the samples results, so we can split the results based on site and create a site specific file. Transfer the new file/s back to the server and use the freyplot script.
 ```
-./freyplot.sh
+./freyplot.sh {directory_of_new_aggregate_tsv_file} {output_directory}
 ```
 This will generate the SC2 estimated abundances plots. 
 
