@@ -56,15 +56,17 @@ You will need to transfer the cov folder, depth folder, freyja aggregate file (o
 
 Transfer the aggregate tsv file to your computer and replace the sample names with the description names. Save the file or files. The aggregate file has all the samples results, so we can split the results based on site and create a site specific file. Transfer the new file/s back to the server and use the freyplot script.
 ```
-./freyplot.sh {directory_of_new_aggregate_tsv_file} {output_directory}
+./freyplot.sh {directory_of_new_aggregate_tsv_file}
 ```
-This will generate the SC2 estimated abundances plots. 
+This will generate the SC2 estimated abundances plots in the same directory containing the aggregate tsv file. 
 
 # Sample Statistics and SC2 Variant Profiles in R
 - You will need the cov files, depth files and all_filtered.tsv files. You will also need the covid.txt, voc_omicron.txt and a description file (this is similar to the samplesheet).
-- The covid.txt, description file, voc_omicron.txt and all_filtered.tsv are required for the voc_annotation.rmd script. This will generate the SC2 variant profile. Remember to open the all_filtered.tsv file in excel and save it prior to running the script.
+- The covid.txt, description file, voc_omicron.txt and all_filtered.tsv are required for the voc_annotation.rmd script. This will generate the SC2 variant profile. 
+- Remember to open the all_filtered.tsv file in excel and save it prior to running the script.
 - The description file, covid.txt, depth folder and cov folder are needed for the sentinel_reports.rmd script. This will generate the sample statistics.
 - The R markdown scripts and necessary files are in the folder called Rscripts.
+- The sentinel_reports.rmd script will through an error if there are any failed sequencing samples in the cov or depth folders. If you encounter this error, just find and delete those files and rerun the script.
 
 
 
